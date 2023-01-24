@@ -45,7 +45,7 @@ const config: Configuration = {
     }),
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'AnimeListRemote',
+      name: 'TopAnimeListRemote',
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
