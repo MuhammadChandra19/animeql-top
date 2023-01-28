@@ -52,7 +52,18 @@ const config: Configuration = {
       exposes: {
         "./TopAnimeList": "./src/views/components/TopAnimeList"
       },
-      
+      shared: {
+        react: { 
+          requiredVersion: deps.react,
+          singleton: true,
+          eager: true
+        },
+        'react-dom': {
+          requiredVersion: deps['react-dom'],
+          singleton: true,
+          eager: true
+        },
+      },
     }),
     new CleanWebpackPlugin(),
     // new BundleAnalyzerPlugin()
