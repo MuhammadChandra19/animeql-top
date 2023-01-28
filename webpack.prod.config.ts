@@ -3,6 +3,7 @@ import { Configuration, container } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 const deps = require('./package.json').dependencies
 
 const ModuleFederationPlugin = container.ModuleFederationPlugin
@@ -64,7 +65,8 @@ const config: Configuration = {
         },
         // react: { eager: true },
       },
-    })
+    }),
+    new CleanWebpackPlugin(),
     // new BundleAnalyzerPlugin()
   ],
 };
