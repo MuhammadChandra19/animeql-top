@@ -54,9 +54,17 @@ const config: Configuration = {
         "./TopAnimeList": "./src/views/components/TopAnimeList"
       },
       shared: {
-        ...deps,
-        // react: { eager: true },
-      },
+        react: { 
+          requiredVersion: deps.react,
+          singleton: true,
+          eager: true
+        },
+        'react-dom': {
+          requiredVersion: deps['react-dom'],
+          singleton: true,
+          eager: true
+        },
+      }
     })
   ],
   devtool: "inline-source-map",
